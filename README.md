@@ -44,8 +44,7 @@ co.eci.snake (Segunda parte del laboratorio)
 ├─ core/                # Dominio: Board, Snake, Direction, Position
 ├─ core/engine/         # GameClock (ticks, Pausa/Reanudar)
 ├─ concurrency/         # SnakeRunner (lógica por serpiente con virtual threads)
-└─ ui/legacy/           # UI estilo legado (Swing) con grilla y botón Action
-```
+└─ ui/legacy/           # UI estilo legado (Swing) con grilla y botón ActionQ1
 ---
 
 ## Reporte de Laboratorio
@@ -61,3 +60,5 @@ Este laboratorio es una adaptación modernizada del ejercicio **SnakeRace** de A
 
 **Base construida por el Ing. Javier Toquica.**
 **Modificado por Juan Esteban Rodriguez.**
+
+
