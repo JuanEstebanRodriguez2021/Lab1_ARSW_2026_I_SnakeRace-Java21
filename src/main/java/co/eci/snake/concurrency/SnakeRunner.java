@@ -12,6 +12,8 @@ public final class SnakeRunner implements Runnable {
   private final int baseSleepMs = 80;
   private final int turboSleepMs = 40;
   private int turboTicks = 0;
+  private volatile boolean stop = false;
+  private final Object pauseLock = new Object();
 
   public SnakeRunner(Snake snake, Board board) {
     this.snake = snake;
@@ -23,6 +25,11 @@ public final class SnakeRunner implements Runnable {
     try {
       while (!Thread.currentThread().isInterrupted()) {
         maybeTurn();
+        synchronized (pauseLock){
+          while(stop){
+            pauseLock.wait();
+          }
+        }
         var res = board.step(snake);
         if (res == Board.MoveResult.HIT_OBSTACLE) {
           randomTurn();
@@ -46,5 +53,16 @@ public final class SnakeRunner implements Runnable {
   private void randomTurn() {
     var dirs = Direction.values();
     snake.turn(dirs[ThreadLocalRandom.current().nextInt(dirs.length)]);
+  }
+
+  public void pause(){
+    stop = true;
+  }
+
+  public void resume(){
+    synchronized (pauseLock){
+      stop = false;
+      pauseLock.notifyAll();
+    }
   }
 }
