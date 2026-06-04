@@ -13,14 +13,14 @@ En este laboratorio se llevará a cabo la modificación de dos aplicaciones: un 
 firstpart (Primera parte del laboratorio)
 ├─ Control.java             # Bootstrap de la aplicación (Main)
 ├─ Main.java                # Motor de Hilos
-├─ PrimerFinderThread       # Objeto 
+├─ PrimerFinderThread       # Objeto para establecer hilos
 
 co.eci.snake (Segunda parte del laboratorio)
 ├─ app/                 # Bootstrap de la aplicación (Main)
 ├─ core/                # Dominio: Board, Snake, Direction, Position
 ├─ core/engine/         # GameClock (ticks, Pausa/Reanudar)
 ├─ concurrency/         # SnakeRunner (lógica por serpiente con virtual threads)
-└─ ui/legacy/           # UI estilo legado (Swing) con grilla y botón ActionQ1
+└─ ui/legacy/           # UI estilo legado (Swing) con grilla y botones actualizados
 ```
 ---
 
