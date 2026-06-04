@@ -84,8 +84,10 @@ Adicional se muestra un caso en el que al dar **Pause**, arroja el la serpiente 
 ![Tamaño.png](docs/Tama%C3%B1o.png)
 
 #### Robustez
+
 Se aplica un N alto de 20 serpientes para verificar si hay rompimiento, en este caso no se presentan por la fluidez y mantenibilidad de la carrera
 ![Robustez.png](docs/Robustez.png)
+
 ---
 ## Créditos
 
