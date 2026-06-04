@@ -11,6 +11,7 @@ public class Control extends Thread {
     private volatile boolean pause = false;
     private final int NDATA = MAXVALUE / NTHREADS;
     private PrimeFinderThread pft[];
+
     private Control() {
         scanner = new Scanner(System.in);
         pft = new PrimeFinderThread[NTHREADS];

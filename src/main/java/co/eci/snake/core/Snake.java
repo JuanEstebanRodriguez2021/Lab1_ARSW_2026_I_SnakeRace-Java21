@@ -38,4 +38,8 @@ public final class Snake {
     if (grow) maxLength++;
     while (body.size() > maxLength) body.removeLast();
   }
+
+  public synchronized int getMaxLength(){
+    return maxLength;
+  }
 }
