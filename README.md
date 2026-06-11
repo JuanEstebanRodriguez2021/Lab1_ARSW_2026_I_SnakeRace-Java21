@@ -37,6 +37,7 @@ sincronización **wait()** y **notifyAll()**. Esto permite detener temporalmente
 - Para reanudarlos se uso un ENTER por medio de Scanner, nos ayuda con la detencion a la espera de que el usuario haga una ejecución.
 
 ![PauseThreads.png](docs/PauseThreads.png)
+
 ![Ejecucion.png](docs/Ejecucion.png)
 
 - El objeto **Control** se conoce como el lock mediante mecanismos de **synchronized**, garantizando exclusión mututa en el acceso al variable recien asiganda de Pausar los hilos (pause).
@@ -65,9 +66,11 @@ sincronización **wait()** y **notifyAll()**. Esto permite detener temporalmente
 ### Correcciones minimas 
 
 Una situación crítica que se presentó fue el prolongamiento del proceso para crear distintos objetos que la serpiente pudiera encontrar, y todo esto debido al uso del mecanismo **synchronized**. Para solucionar el problema, se eliminó dicha palabra  de los métodos **mice()**, **obstacles()**, **turbo()** y **teleports()**, optimizando así su funcionamiento.
+
 ![Correcciones1.png](docs/Correcciones1.png)
 
 Otra situaciòn que se evidencio fue que se añadio **synchronized** en randomEmpty para evitar problemas de carrera
+
 ![Correcciones2.png](docs/Correcciones2.png)
 
 #### Control de ejecucion (UI)
@@ -75,17 +78,20 @@ Otra situaciòn que se evidencio fue que se añadio **synchronized** en randomEm
 Para esta parte de UX, se me asigno implementar botones de Pausa, Inicio y Comienzo. Aplique un **BorderLayout** junto con su logica, implementando tambien algunos mecanismos de sincronizaciòn
 ![Ejecucion.png](docs/Ejecucion.png)
 
-Boton de Inicio(start): Boton para empezar el juego, despues de un click no se puede volver a iniciar
-Boton de Pausa(pause): Boton que detiene el juego y mantiene el estado actual del juego
-Boton de Reanudar(resume): Boton que despues de darle pause, se da resume y retoma el juego con el estado que estaba anteriormente
+- Boton de Inicio(start): Boton para empezar el juego, despues de un click no se puede volver a iniciar
+- Boton de Pausa(pause): Boton que detiene el juego y mantiene el estado actual del juego
+- Boton de Reanudar(resume): Boton que despues de darle pause, se da resume y retoma el juego con el estado que estaba anteriormente
+
 ![BotonesGUI.png](docs/BotonesGUI.png)
 
 Adicional se muestra un caso en el que al dar **Pause**, arroja el la serpiente con mayor tamaño
+
 ![Tamaño.png](docs/Tama%C3%B1o.png)
 
 #### Robustez
 
 Se aplica un N alto de 20 serpientes para verificar si hay rompimiento, en este caso no se presentan por la fluidez y mantenibilidad de la carrera
+
 ![Robustez.png](docs/Robustez.png)
 
 ---
